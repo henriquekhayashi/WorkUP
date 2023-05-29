@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://yumnf1ujyg6k"]
+
+[ext_resource type="Texture2D" uid="uid://s5al7hprjcvh" path="res://assets/graphics/arrowback2x.png" id="1_hvlcq"]
+[ext_resource type="Theme" uid="uid://c5pch03hgt8xk" path="res://assets/theme/top_bar.tres" id="2_0a737"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl3d6"]
+bg_color = Color(0.509804, 0.247059, 0.52549, 1)
+
+[node name="TopBar" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 80)
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nl3d6")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(21, 0)
+layout_mode = 2
+
+[node name="BackMarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 31
+theme_override_constants/margin_bottom = 24
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/BackMarginContainer"]
+layout_mode = 2
+texture_normal = ExtResource("1_hvlcq")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="LabelMarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 9.0
+theme_override_constants/margin_top = 11
+
+[node name="Label" type="Label" parent="HBoxContainer/LabelMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 9.0
+theme = ExtResource("2_0a737")
+text = "Trilhas de conhecimento"

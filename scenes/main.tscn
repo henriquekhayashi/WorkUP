@@ -1,0 +1,107 @@
+[gd_scene load_steps=13 format=3 uid="uid://cyjbhnrn4okpx"]
+
+[ext_resource type="Script" path="res://src/main.gd" id="1_bv0b4"]
+[ext_resource type="PackedScene" uid="uid://8hmxjv71ibdg" path="res://scenes/tela_abertura.tscn" id="1_w5j5a"]
+[ext_resource type="PackedScene" uid="uid://3hscjaohcq3t" path="res://scenes/tela_onboarding.tscn" id="2_7lblw"]
+[ext_resource type="PackedScene" uid="uid://bujuekhtksob5" path="res://scenes/login.tscn" id="3_ahndq"]
+[ext_resource type="PackedScene" uid="uid://b0fcmjk4xf0sv" path="res://scenes/home.tscn" id="4_lqfa2"]
+[ext_resource type="PackedScene" uid="uid://d2f0mrgldu8ww" path="res://scenes/trilhas_de_carreira.tscn" id="5_2rcwc"]
+[ext_resource type="PackedScene" uid="uid://q4e8w0rpv22l" path="res://scenes/trilha_selecionada.tscn" id="6_0r8t5"]
+[ext_resource type="PackedScene" uid="uid://bx0r64k58ipfk" path="res://scenes/tema_selecionado.tscn" id="7_0ntf4"]
+[ext_resource type="PackedScene" uid="uid://bj0ipt8tdkuis" path="res://scenes/tarefa.tscn" id="8_tg2r2"]
+
+[sub_resource type="Animation" id="Animation_rkqjw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TelaAbertura/CenterContainer:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_crfdv"]
+resource_name = "abertura"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TelaAbertura/CenterContainer:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2.14355, 0.594604),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"show_on_boarding"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x8u64"]
+_data = {
+"RESET": SubResource("Animation_rkqjw"),
+"abertura": SubResource("Animation_crfdv")
+}
+
+[node name="main" type="Node"]
+script = ExtResource("1_bv0b4")
+
+[node name="TelaAbertura" parent="." instance=ExtResource("1_w5j5a")]
+
+[node name="TelaOnboarding" parent="." instance=ExtResource("2_7lblw")]
+visible = false
+
+[node name="Login" parent="." instance=ExtResource("3_ahndq")]
+visible = false
+
+[node name="Home" parent="." instance=ExtResource("4_lqfa2")]
+visible = false
+
+[node name="TrilhaCarreira" parent="." instance=ExtResource("5_2rcwc")]
+visible = false
+
+[node name="TrilhaSelecionada" parent="." instance=ExtResource("6_0r8t5")]
+visible = false
+
+[node name="TemaSelecionado" parent="." instance=ExtResource("7_0ntf4")]
+visible = false
+
+[node name="Tarefa" parent="." instance=ExtResource("8_tg2r2")]
+visible = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "abertura"
+libraries = {
+"": SubResource("AnimationLibrary_x8u64")
+}
+
+[connection signal="pressed" from="TelaOnboarding/MarginContainer/VBoxContainer/OnboardTextureButton" to="." method="_on_onboard_texture_button_pressed"]
+[connection signal="pressed" from="Login/MarginContainer/VBoxContainer/EntrarTextureButton" to="." method="_on_entrar_texture_button_pressed"]
+[connection signal="pressed" from="Login/MarginContainer/VBoxContainer/MarginContainer6/ContinuarComGoogleButton" to="." method="_on_continuar_com_google_button_pressed"]
+[connection signal="toggled" from="Login/MarginContainer/VBoxContainer/MarginContainer9/CriarNovaContaButton" to="." method="_on_criar_nova_conta_button_toggled"]
+[connection signal="toggled" from="Login/MarginContainer/VBoxContainer/MarginContainer8/EsqueciSenhaButton" to="." method="_on_esqueci_senha_button_toggled"]
+[connection signal="pressed" from="Home/MarginContainer/VBoxContainer/SelectMarginContainer/PanelContainer/HBoxContainer/TrilhaCTextureButton" to="." method="_on_trilha_c_texture_button_pressed"]
+[connection signal="pressed" from="Home/MarginContainer/VBoxContainer/SelectMarginContainer2/PanelContainer/HBoxContainer/AprenderJogoTextureButton" to="." method="_on_aprender_jogo_texture_button_pressed"]
+
+[editable path="TelaAbertura"]
+[editable path="TelaOnboarding"]
+[editable path="Login"]
+[editable path="Home"]

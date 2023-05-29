@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://c6a1ogyxq1thh"]
+
+[ext_resource type="FontFile" uid="uid://bb68yb7yqdw0t" path="res://assets/fonts/poppins/Poppins-Medium.ttf" id="1_2nakr"]
+
+[resource]
+default_font = ExtResource("1_2nakr")
+default_font_size = 20
+Label/colors/font_color = Color(0.32549, 0.32549, 0.32549, 1)
+Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 0)
+RichTextLabel/colors/default_color = Color(0.32549, 0.32549, 0.32549, 1)

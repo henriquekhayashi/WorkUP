@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://di3kjngev3m87"]
+
+[ext_resource type="Theme" uid="uid://c5pch03hgt8xk" path="res://assets/theme/top_bar.tres" id="2_lpmja"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nl3d6"]
+bg_color = Color(0.509804, 0.247059, 0.52549, 1)
+shadow_color = Color(0, 0, 0, 0.34902)
+shadow_size = 6
+
+[node name="TopBarNoBack" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 80)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 42.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nl3d6")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="LabelMarginContainer" type="MarginContainer" parent="CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 9.0
+theme_override_constants/margin_top = 11
+
+[node name="Label" type="Label" parent="CenterContainer/LabelMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 9.0
+theme = ExtResource("2_lpmja")
+text = "Qual é a diversão para hoje?"

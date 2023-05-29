@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://3rpq0vf3najd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uhs41"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b72am"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ustdd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kov75"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ouxym"]
+
+[node name="Button" type="Button"]
+theme_override_styles/normal = SubResource("StyleBoxEmpty_uhs41")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_b72am")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ustdd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kov75")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ouxym")

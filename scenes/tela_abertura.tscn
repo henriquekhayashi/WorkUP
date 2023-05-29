@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://8hmxjv71ibdg"]
+
+[ext_resource type="Theme" uid="uid://q3381aosjrrt" path="res://assets/theme/general_theme.tres" id="1_yyauc"]
+[ext_resource type="Texture2D" uid="uid://cuy33724l0vr7" path="res://assets/graphics/trofeu.png" id="2_8omvs"]
+[ext_resource type="FontFile" uid="uid://bsyqyecnhtant" path="res://assets/fonts/poppins/Poppins-Bold.ttf" id="4_hpain"]
+
+[node name="TelaAbertura" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yyauc")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 121
+theme_override_constants/margin_top = 300
+theme_override_constants/margin_right = 119
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+
+[node name="Trofeu" type="TextureRect" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_8omvs")
+stretch_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 9)
+layout_mode = 2
+
+[node name="Label2" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.509804, 0.247059, 0.52549, 1)
+theme_override_fonts/normal_font = ExtResource("4_hpain")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "[center]Work UP![/center]"
+fit_content = true

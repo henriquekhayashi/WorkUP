@@ -1,0 +1,12 @@
+res://scenes/main.tscn
+res://scenes/tela_abertura.tscn
+res://scenes/tela_onboarding.tscn
+res://scenes/login.tscn
+res://scenes/home.tscn
+res://scenes/trilhas_de_carreira.tscn
+res://scenes/trilha_selecionada.tscn
+res://scenes/tarefa.tscn
+res://scenes/tema_selecionado.tscn
+res://scenes/nav_bar.tscn
+res://scenes/empty_button.tscn
+res://scenes/base_button.tscn

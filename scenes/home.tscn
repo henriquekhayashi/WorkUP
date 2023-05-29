@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0fcmjk4xf0sv"]
+
+[ext_resource type="PackedScene" uid="uid://di3kjngev3m87" path="res://scenes/top_bar_noback.tscn" id="1_og7ng"]
+[ext_resource type="Texture2D" uid="uid://bk00n1rpxos6h" path="res://assets/graphics/figura_dev2.png" id="3_lbqse"]
+[ext_resource type="Theme" uid="uid://c6a1ogyxq1thh" path="res://assets/theme/trilha_button_font.tres" id="4_krfd2"]
+[ext_resource type="Texture2D" uid="uid://o1unbwasyo77" path="res://assets/graphics/figura_designer.png" id="5_6qru4"]
+[ext_resource type="PackedScene" uid="uid://b14p7pi4xlfv" path="res://scenes/nav_bar.tscn" id="6_6xv0o"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_110hc"]
+
+[node name="Home" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TopBarNoBack" parent="MarginContainer/VBoxContainer" instance=ExtResource("1_og7ng")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 72)
+layout_mode = 2
+
+[node name="SelectMarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/SelectMarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_110hc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SelectMarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 29
+
+[node name="TrilhaCTextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/SelectMarginContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_lbqse")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/SelectMarginContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 19
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer/SelectMarginContainer/PanelContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_krfd2")
+text = "Ver trilhas de conhecimento"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 69)
+layout_mode = 2
+
+[node name="SelectMarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 17
+theme_override_constants/margin_right = 17
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/SelectMarginContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_110hc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/SelectMarginContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 28
+alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/SelectMarginContainer2/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 17
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer/SelectMarginContainer2/PanelContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("4_krfd2")
+text = "Quero aprender a criar um jogo"
+
+[node name="AprenderJogoTextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer/SelectMarginContainer2/PanelContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("5_6qru4")
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="NavBar" parent="MarginContainer/VBoxContainer" instance=ExtResource("6_6xv0o")]
+layout_mode = 2
